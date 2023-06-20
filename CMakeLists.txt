@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(async_web_server_cpp VERSION 2.0.0 LANGUAGES CXX)
 
-# find_package(ament_cmake_ros REQUIRED)
+find_package(ament_cmake_ros REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS filesystem regex thread)
@@ -53,16 +53,16 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 # Testing #
 ###########
 
-# if(BUILD_TESTING)
-#     add_subdirectory(test)
-# endif()
+if(BUILD_TESTING)
+    add_subdirectory(test)
+endif()
 
 ###################################################
 ## Declare things to be passed to other projects ##
 ###################################################
 
-# ament_export_targets(${PROJECT_NAME}Targets HAS_LIBRARY_TARGET)
-# ament_package(CONFIG_EXTRAS find_dependencies.cmake.in)
+ament_export_targets(${PROJECT_NAME}Targets HAS_LIBRARY_TARGET)
+ament_package(CONFIG_EXTRAS find_dependencies.cmake.in)
 
 #############
 ## Install ##
